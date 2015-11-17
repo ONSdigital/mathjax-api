@@ -1,9 +1,11 @@
 FROM node:4
 
-WORKDIR /usr/mathjax
+WORKDIR /src
 
-RUN npm install https://github.com/carlhuk/mathjax-api/tarball/master
+COPY . /src
+RUN npm install
 
-EXPOSE 8010
-CMD ["node", "mathjax-api/app.js"]
+EXPOSE 8080
+
+CMD ["node", "app.js"]
 
