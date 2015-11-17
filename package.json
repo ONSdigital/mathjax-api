@@ -1,0 +1,28 @@
+{
+  "name": "mathjax-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlhuk/mathjax-api.git"
+  },
+  "keywords": [
+    "mathjax",
+    "node",
+    "docker",
+    "express"
+  ],
+  "author": "Carl Hembrough",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlhuk/mathjax-api/issues"
+  },
+  "homepage": "https://github.com/carlhuk/mathjax-api#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
