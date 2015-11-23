@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/carlhuk/mathjax-api#readme",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "mathjax-node": "^0.4.0"
   }
