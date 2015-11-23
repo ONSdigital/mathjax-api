@@ -1,11 +1,10 @@
 FROM node:4
 
 WORKDIR /src
+ADD . /src
 
-COPY . /src
 RUN npm install
-
 EXPOSE 8080
 
-CMD ["node", "app.js"]
+CMD ["node","app.js"]
 

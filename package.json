@@ -2,7 +2,7 @@
   "name": "mathjax-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/carlhuk/mathjax-api#readme",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "mathjax-node": "^0.4.0"
   }
 }
