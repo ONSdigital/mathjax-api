@@ -1,5 +1,5 @@
 # mathjax-api
-A JSON based API to expose MathJax functionality including a Docker configuration allowing the API to be hosted in a Docker container
+A Node.js HTTP API to render MathJax equations in HTML content
 
 This service uses the MathJax-node implementation that is optimised for mathjax embedded in HTML content. It is currently limited to LaTex to SVG conversion, but feel free to extend it :)
 
