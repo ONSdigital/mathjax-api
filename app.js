@@ -22,6 +22,12 @@ app.post('/', function (req, res) {
     inputs: ["TeX"],
     renderer: "NativeMML"
   }, function (result) {
+
+    console.log("--- Request -----");
+    console.log(req.body.input);
+    console.log("--- response -----");
+    console.log(result.html);
+    console.log("------------------");
     res.send(result.html);
   });
 });
