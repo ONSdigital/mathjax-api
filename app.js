@@ -9,8 +9,7 @@ mjAPI.start();
 app.get('/', function (req, res) {
   mjAPI.typeset({
     html: "<p style='white-space:pre-wrap;font-weight:bold;color: #79ae3d; '>Some random text in the page and now the equation:  $ \\Gamma(z) = \\int_0^\\infty t^{z-1} $ <p/>",
-    inputs: ["TeX"],
-    renderer: "NativeMML"
+    inputs: ["TeX"]
   }, function (result) {
     res.send(result.html);
   });
@@ -19,8 +18,7 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   mjAPI.typeset({
     html: req.body,
-    inputs: ["TeX"],
-    renderer: "NativeMML"
+    inputs: ["TeX"]
   }, function (result) {
     res.send(result.html);
   });
