@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser'); // middleware for parsing request body.
 var app = express();
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(bodyParser.text({ extended: true }));
 
 var mjAPI = require("mathjax-node/lib/mj-page.js");
 mjAPI.start();
@@ -18,21 +18,15 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   mjAPI.typeset({
-    html: req.body.input,
+    html: req.body,
     inputs: ["TeX"],
     renderer: "NativeMML"
   }, function (result) {
-
-    console.log("--- Request -----");
-    console.log(req.body.input);
-    console.log("--- response -----");
-    console.log(result.html);
-    console.log("------------------");
     res.send(result.html);
   });
 });
 
-var server = app.listen(8080, function () {
+var server = app.listen(8888, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Server listening at http://%s:%s', host, port);
