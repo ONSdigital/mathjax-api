@@ -3,15 +3,16 @@ var bodyParser = require('body-parser'); // middleware for parsing request body.
 var app = express();
 app.use(bodyParser.text({ extended: true }));
 
-var mjAPI = require("mathjax-node/lib/mj-page.js");
+var mjAPI = require("mathjax-node/lib/mj-single.js");
 mjAPI.start();
 
 app.get('/', function (req, res) {
   mjAPI.typeset({
-    html: "<p style='white-space:pre-wrap;font-weight:bold;color: #79ae3d; '>Some random text in the page and now the equation:  $ \\Gamma(z) = \\int_0^\\infty t^{z-1} $ <p/>",
-    inputs: ["TeX"]
+    math: "\\Gamma(z) = \\int_0^\\infty t^{z-1}",
+    format: "TeX",
+    svg:true
   }, function (result) {
-    res.send(result.html);
+    res.send(result.svg);
   });
 });
 
