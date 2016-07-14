@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
   mjAPI.typeset({
     math: "\\Gamma(z) = \\int_0^\\infty t^{z-1}",
     format: "TeX",
-    svg:true
+    svg: true
   }, function (result) {
     res.send(result.svg);
   });
@@ -18,8 +18,9 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   mjAPI.typeset({
-    html: req.body,
-    inputs: ["TeX"]
+    math: req.body,
+    format: "TeX",
+    svg: true
   }, function (result) {
     res.send(result.html);
   });
