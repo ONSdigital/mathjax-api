@@ -22,7 +22,7 @@ app.post('/', function (req, res) {
     format: "TeX",
     svg: true
   }, function (result) {
-    res.send(result.html);
+    res.send(result.svg);
   });
 });
 
