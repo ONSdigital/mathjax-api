@@ -10,9 +10,10 @@ app.get('/', function (req, res) {
   mjAPI.typeset({
     math: "\\Gamma(z) = \\int_0^\\infty t^{z-1}",
     format: "TeX",
-    svg: true
+    svg: true,
+    mml: true
   }, function (result) {
-    res.send(result.svg);
+    res.send(result);
   });
 });
 
@@ -20,13 +21,14 @@ app.post('/', function (req, res) {
   mjAPI.typeset({
     math: req.body,
     format: "TeX",
-    svg: true
+    svg: true,
+    mml: true
   }, function (result) {
-    res.send(result.svg);
+    res.send(result);
   });
 });
 
-var server = app.listen(8080, function () {
+var server = app.listen(8888, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Server listening at http://%s:%s', host, port);
