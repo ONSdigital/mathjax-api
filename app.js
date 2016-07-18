@@ -18,6 +18,11 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
+
+  // Reinitialising mathjax as a crude fix to prevent errors leaving mathjax in a broken state.
+  var mjAPI = require("mathjax-node/lib/mj-single.js");
+  mjAPI.start();
+
   mjAPI.typeset({
     math: req.body,
     format: "TeX",
@@ -28,7 +33,7 @@ app.post('/', function (req, res) {
   });
 });
 
-var server = app.listen(8080, function () {
+var server = app.listen(8888, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Server listening at http://%s:%s', host, port);
