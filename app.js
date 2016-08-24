@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser'); // middleware for parsing request body.
 var app = express();
-app.use(bodyParser.text({ extended: true }));
+app.use(bodyParser.text({extended: true}));
 
 var mjAPI = require("mathjax-node/lib/mj-single.js");
 mjAPI.start();
@@ -19,18 +19,20 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
 
-  // Reinitialising mathjax as a crude fix to prevent errors leaving mathjax in a broken state.
-  var mjAPI = require("mathjax-node/lib/mj-single.js");
-  mjAPI.start();
-
-  mjAPI.typeset({
-    math: req.body,
-    format: "TeX",
-    svg: true,
-    mml: true
-  }, function (result) {
-    res.send(result);
-  });
+  try {
+    mjAPI.typeset({
+      math: req.body,
+      format: "TeX",
+      svg: true,
+      mml: true
+    }, function (result) {
+      res.send(result);
+    });
+  } catch (exception) {
+    console.log("A Mathjax exception occured. " + exception);
+    mjAPI.start();
+    res.send();
+  }
 });
 
 var server = app.listen(8080, function () {
