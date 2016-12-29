@@ -7,6 +7,7 @@ Defaults port 8080.
 
 Node usage: 
 ```
+$ npm install
 $ node app.js
 ```
 
