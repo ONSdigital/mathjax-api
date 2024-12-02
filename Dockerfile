@@ -1,4 +1,4 @@
-FROM node:4
+FROM node:4.8.1
 
 WORKDIR /src
 ADD . /src
