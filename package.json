@@ -1,30 +1,18 @@
 {
   "name": "mathjax-api",
-  "version": "1.0.0",
-  "description": "",
+  "description": "A Node.js HTTP API to render MathJax equations as SVG.",
+  "license": "MIT",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carlhuk/mathjax-api.git"
+    "url": "https://github.com/ONSdigital/mathjax-api"
   },
-  "keywords": [
-    "mathjax",
-    "node",
-    "docker",
-    "express"
-  ],
-  "author": "Carl Hembrough",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/carlhuk/mathjax-api/issues"
-  },
-  "homepage": "https://github.com/carlhuk/mathjax-api#readme",
   "dependencies": {
-    "body-parser": "^1.14.1",
-    "express": "^4.13.3",
-    "mathjax-node": "^0.4.0"
+    "body-parser": "1.17.1",
+    "express": "4.15.2",
+    "mathjax-node": "0.4.0"
   }
 }
