@@ -16,7 +16,19 @@ To run the API locally you must have the following:
    brew install nvm
    ```
 
-   :warning: Make sure to follow the instructions provided at the end of the install to configure up your shell profile. Once you have done this, you will need to reload your shell for this to take effect.
+   Then add the following to your `~/.bashrc` or `~/.zshrc`:
+
+   ```shell
+   export NVM_DIR="$HOME/.nvm"
+   [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+   [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+   ```
+
+   and reload your shell:
+
+   ```shell
+   exec $SHELL -l
+   ```
 
 2. The node version specified in [`.nvmrc`](./.nvmrc) installed through nvm:
 
